@@ -9,7 +9,7 @@ const Header = () => {
       <div className="mt-bottom-bar">
         <div className="container-fluid">
           <div className="row">
-            <div className="col-xs-12 d-flex flex-direction-row justify-content-between align-item-center">
+            <div className="col-xs-12 d-flex flex-direction-row justify-content-between align-items-center">
               <Logo />
               <Nav />
               <Icons />
