@@ -3596,7 +3596,7 @@ a:hover {
 76. Mt Main Slider / .mt-main-slider
 -------------------------------------------------------------------*/
 .mt-main-slider {
-  padding: 0 20px;
+  /* padding: 0 20px; */
   overflow: hidden;
   background: #f6f6f6;
 }
@@ -12647,4 +12647,7 @@ a:hover, a:active, a:focus {
 
 .ckCustomNav a {
   text-decoration: none;
+}
+main{
+  padding: 0 !important;
 }
