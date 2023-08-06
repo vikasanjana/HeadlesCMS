@@ -15,6 +15,7 @@ const Pramotionals = () => {
       const response = await axios.get(
         `/api/products?taxonomy=${taxonomy}&slug=${slug}`
       );
+      console.log(response);
       let productsArray = [];
       Object.entries(response.data).map(([key, value]) => {
         const id = value.id;

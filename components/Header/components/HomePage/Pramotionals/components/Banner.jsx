@@ -22,7 +22,7 @@ const Banner = ({
           </Link>
           {onSale && (
             <div className="discount">
-              <span>{((regularPrice - salePrice)/regularPrice) * 100}%</span>
+              <span>{(((regularPrice - salePrice)/regularPrice) * 100).toFixed(0)}%</span>
             </div>
           )}
         </div>

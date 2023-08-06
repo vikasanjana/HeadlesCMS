@@ -6,6 +6,7 @@ import { fetchGetReqFromUrl } from "@/utility/AxiosFetch";
 import { Box, Skeleton } from "@mui/material";
 import Pramotionals from "@/components/Header/components/HomePage/Pramotionals/Pramotionals";
 import { Col, Container, Row } from "react-bootstrap";
+import FeaturedTabs from "@/components/Header/components/HomePage/FeaturedTabs/FeaturedTabs";
 
 const index = () => {
   const [slides, setSlides] = useState();
@@ -24,7 +25,6 @@ const index = () => {
     setSlides(slidesArray);
     setIsLoading(false);
   }
-
   useEffect(() => {
     getSlides();
   }, []);
@@ -46,6 +46,7 @@ const index = () => {
                 </Col>
               </Row>
             </Container>
+            <FeaturedTabs />
           </Layout>
         </HomePageContext.Provider>
       )}
