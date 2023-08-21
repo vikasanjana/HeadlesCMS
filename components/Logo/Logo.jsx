@@ -1,5 +1,6 @@
 import { Box, Skeleton } from "@mui/material";
 import axios from "axios";
+import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
 const Logo = () => {
@@ -34,7 +35,7 @@ const Logo = () => {
         </Box>
       ) : (
         <a href="#" className="d-flex align-items-center">
-          <img src={siteIcon?.logo_url} alt="headless-icon" />
+          <Image fill src={siteIcon?.logo_url} alt="headless-icon" />
         </a>
       )}
     </div>

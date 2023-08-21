@@ -18,6 +18,7 @@ import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
 import Header from "./Header/Header";
 import LayoutContext from "./LayoutContext";
+import Footer from "./Footer/footer";
 
 const drawerWidth = 400;
 
@@ -98,6 +99,7 @@ export default function Layout({ children }) {
         <Main open={open}>
           <DrawerHeader />
           {children}
+        <Footer />
         </Main>
         <Drawer
           sx={{

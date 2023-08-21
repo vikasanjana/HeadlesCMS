@@ -105,6 +105,7 @@
   list-style: none;
 }
 
+
 #wrapper {
   width: 100%;
   overflow: hidden;
@@ -12650,4 +12651,10 @@ a:hover, a:active, a:focus {
 }
 main{
   padding: 0 !important;
+}
+a {
+  text-decoration: none;
+}
+body{
+  overflow-x: hidden;
 }

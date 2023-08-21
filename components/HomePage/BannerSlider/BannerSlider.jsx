@@ -1,12 +1,24 @@
-import HomePageContext from "@/pages/HomePageContext";
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Carousel from "react-bootstrap/Carousel";
-const BannerSlider = () => {
-  const { slides } = useContext(HomePageContext);
+
+const BannerSlider = ({slides}) => {
   const [index, setIndex] = useState(0);
   const handleSelect = (selectedIndex) => {
     setIndex(selectedIndex);
   };
+
+  // Add a state to indicate if the component is mounted
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  // Render the component only if it's mounted (client-side rendering)
+  if (!isMounted) {
+    return null;
+  }
+
   return (
     <div className="mt-main-slider">
       <Carousel
@@ -25,7 +37,10 @@ const BannerSlider = () => {
             >
               <div className="container">
                 <div className="row">
-                  <div className="col-xs-12" dangerouslySetInnerHTML={{ __html: item.content }} />
+                  <div
+                    className="col-xs-12"
+                    dangerouslySetInnerHTML={{ __html: item.content }}
+                  />
                 </div>
               </div>
             </Carousel.Item>

@@ -1,8 +1,8 @@
 import React from "react";
-import Logo from "./components/Logo/Logo";
-import Icons from "./components/Icons/Icons";
-import Nav from "./components/Nav/Nav";
-
+import Logo from "@/components/Logo/Logo";
+import Nav from "@/components/Nav/Nav";
+import Icons from "@/components//Icons/Icons";
+  
 const Header = () => {
   return (
     <header id="mt-header" className="style4" style={{ flexGrow: 1 }}>

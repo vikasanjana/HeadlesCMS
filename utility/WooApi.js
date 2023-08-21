@@ -9,11 +9,26 @@ const api = new WooCommerceRestApi({
 /**
  * Fetch Product of particular texonomy
  */
-async function fetchProudctByTexonomy(texonomy, slug) {
+async function fetchProudctByTexonomy(texonomy, slug , page = 1, perPage = 10) {
   try {
     const response = await api.get("products", {
       attribute: texonomy,
       attribute_term: slug,
+      page: page,
+      per_page: perPage,
+    });
+    return response.data; 
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    throw error;
+  }
+}
+
+async function fetchAllProducts(page = 1, perPage = 10){
+  try {
+    const response = await api.get("products", {
+      page: page,
+      per_page: perPage,
     });
     return response.data; 
   } catch (error) {
@@ -24,4 +39,5 @@ async function fetchProudctByTexonomy(texonomy, slug) {
 
 module.exports = {
   fetchProudctByTexonomy,
+  fetchAllProducts
 };

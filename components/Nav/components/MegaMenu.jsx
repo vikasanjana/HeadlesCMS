@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 const MegaMenu = () => {
@@ -156,7 +157,8 @@ const MegaMenu = () => {
             <div className="mt-col-3 promo">
               <div className="mt-promobox">
                 <a href="#">
-                  <img
+                  <Image
+                    fill
                     src="images/banner-drop.jpg"
                     alt="promo banner"
                     className="img-responsive"

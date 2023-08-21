@@ -5,7 +5,7 @@ const NavItem = ({ item }) => {
   const { id, title, slug } = item;
   return (
     <li>
-      <Link href={`/${slug}`} className="drop-link">
+      <Link href={`${slug}`} className="drop-link">
         {title}
       </Link>
     </li>

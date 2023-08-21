@@ -1,66 +1,67 @@
+import Image from "next/image";
 import React from "react";
-
-const ProductCard = () => {
+import LocalMallIcon from "@mui/icons-material/LocalMall";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import VisibilityIcon from "@mui/icons-material/Visibility";
+import {
+  Button,
+  Card,
+  CardActions,
+  CardContent,
+  CardMedia,
+  IconButton,
+  Typography,
+} from "@mui/material";
+const ProductCard = ({ item, style }) => {
+  const { id, name, image, onSale, regularPrice, salePrice, priceHtml } = item;
+  console.log(priceHtml)
+  // console.log('image from product card' . image)
   return (
-    <div className="mt-product1 mt-paddingbottom20">
-      <div className="box">
-        <div className="b1">
-          <div className="b2">
-            <a href="product-detail.html" tabIndex="0">
-              <img
-                src="https://htmlbeans.com/html/schon/images/products/img01.jpg"
-                alt="image description"
-              />
-            </a>
-            <span className="caption">
-              <span className="new">NEW</span>
-            </span>
-            <ul className="mt-stars">
-              <li>
-                <i className="fa fa-star"></i>
-              </li>
-              <li>
-                <i className="fa fa-star"></i>
-              </li>
-              <li>
-                <i className="fa fa-star"></i>
-              </li>
-              <li>
-                <i className="fa fa-star-o"></i>
-              </li>
-            </ul>
-            <ul className="links">
-              <li>
-                <a href="#" tabIndex="0">
-                  <i className="icon-handbag"></i>
-                  <span>Add to Cart</span>
-                </a>
-              </li>
-              <li>
-                <a href="#" tabIndex="0">
-                  <i className="icomoon icon-heart-empty"></i>
-                </a>
-              </li>
-              <li>
-                <a href="#popup1" className="lightbox" tabIndex="0">
-                  <i className="icomoon icon-eye"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
+    <Card style={style}>
+      <CardMedia component="img" height="194" image={image} alt={name} />
+      <CardContent  style={{
+        paddingBottom :0
+      }} >
+        <Typography variant="subtitle2" className=" text-dark">
+          {name}
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          <div dangerouslySetInnerHTML={{ __html: priceHtml }}></div>
+        </Typography>
+      </CardContent>
+      <CardActions
+        disableSpacing
+        style={{
+          paddingTop:0
+        }}
+        sx={{
+          display: "flex",
+          flexDirection: "column-reverse",
+          alignItems:'start'
+        }}
+      >
+        <Button
+          variant="contained"
+          color="inherit"
+          startIcon={<LocalMallIcon />}
+        >
+          Add to Cart{" "}
+        </Button>
+        <div >
+          <IconButton
+            aria-label="add to favorites"
+            sx={{
+              maxWidth: "50%",
+            }}
+          >
+            <FavoriteBorderIcon />
+          </IconButton>
+          <IconButton aria-label="share">
+            <VisibilityIcon />
+          </IconButton>
         </div>
-      </div>
-      <div className="txt">
-        <strong className="title">
-          <a href="product-detail.html" tabIndex="0">
-            Puff Chair
-          </a>
-        </strong>
-        <span className="price">
-          <i className="fa fa-eur"></i> <span>287,00</span>
-        </span>
-      </div>
-    </div>
+      </CardActions>
+    </Card>
   );
 };
 
